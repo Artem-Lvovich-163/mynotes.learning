@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "697048125135",
+    "project_id": "mynotes-86af9",
+    "storage_bucket": "mynotes-86af9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:697048125135:android:5d336587af8390cdb2b1ba",
+        "android_client_info": {
+          "package_name": "com.bulankin.mynotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "697048125135-8o8ctm0ptgjpdnfco3mhlj8g9veg89bq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3CF_bbpqRFy8GDU7TSirp0HhFZSnvKr8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "697048125135-8o8ctm0ptgjpdnfco3mhlj8g9veg89bq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
