@@ -5,15 +5,14 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:mynotes/firebase_options.dart';
 
-// ВХОД В СИСТЕМУ
-class LoginView extends StatefulWidget {
-  const LoginView({super.key});
+class RegisterView extends StatefulWidget {
+  const RegisterView({super.key});
 
   @override
-  State<LoginView> createState() => _LoginViewState();
+  State<RegisterView> createState() => _RegisterViewState();
 }
 
-class _LoginViewState extends State<LoginView> {
+class _RegisterViewState extends State<RegisterView> {
   late final TextEditingController _email;
   late final TextEditingController _password;
 
@@ -36,7 +35,7 @@ class _LoginViewState extends State<LoginView> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        title: const Text('Вход'),
+        title: const Text('Регистрация'),
       ),
       body: FutureBuilder(
         future: Firebase.initializeApp(
@@ -69,21 +68,23 @@ class _LoginViewState extends State<LoginView> {
                       final password = _password.text;
                       try {
                         final userCredential = await FirebaseAuth.instance
-                            .signInWithEmailAndPassword(
+                            .createUserWithEmailAndPassword(
                           email: email,
                           password: password,
                         );
 
                         print(userCredential);
                       } on FirebaseAuthException catch (e) {
-                        if (e.code == 'пользователь не найден') {
-                          print('Пользоватеь не найден');
-                        } else if (e.code == 'wrong-password') {
-                          print('wrong-password');
+                        if (e.code == 'weak-password') {
+                          print('weak-password');
+                        } else if (e.code == 'email-already-in-use') {
+                          print('email already in use');
+                        } else if (e.code == 'invalid-email') {
+                          print(e.code);
                         }
                       }
                     },
-                    child: const Text('Войти'),
+                    child: const Text('Регистрация'),
                   ),
                 ],
               );
